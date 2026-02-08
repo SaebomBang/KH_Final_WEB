@@ -167,3 +167,32 @@ hr{ border:0; border-top:1px solid var(--border); margin:16px 0; }
   background: rgba(255,255,255,.28);
   text-decoration: none;
 }
+
+/* login page only */
+.login-form{
+  max-width: 420px;
+  margin: 18px 0;
+}
+
+.login-form .row{
+  display: block !important;   /* 혹시 기존 flex가 걸려있다면 끊기 */
+}
+
+.login-form label{
+  display:block;
+  margin: 6px 0 6px;
+}
+
+.login-form input{
+  width: 100%;
+}
+
+.login-form button{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.login-form{
+  max-width: 420px;
+  margin: 18px auto;
+}

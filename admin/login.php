@@ -14,7 +14,7 @@ include __DIR__ . "/common/header.php";
     <p class="muted" style="color:#dc3545; font-weight:700;">로그인 실패: 아이디/비밀번호 또는 권한을 확인해줘.</p>
 <?php endif; ?>
 
-<form method="post" action="/admin/login_ok.php">
+<form class="login-form" method="post" action="/admin/login_ok.php">
     <div style="display:flex; gap:10px; flex-wrap:wrap;">
         <div>
             <label>ID</label><br>
