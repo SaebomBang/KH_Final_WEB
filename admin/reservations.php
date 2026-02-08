@@ -1,5 +1,7 @@
 <?php
-require "common/dbconn.php";  // $conn, h()
+require __DIR__ . "/common/dbconn.php";
+require __DIR__ . "/common/auth.php";
+require_admin();
 
 $q = trim($_GET["q"] ?? "");             // m_id / m_name 검색
 $status = trim($_GET["status"] ?? "");   // status 필터

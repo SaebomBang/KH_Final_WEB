@@ -1,5 +1,7 @@
 <?php
 require __DIR__ . "/common/dbconn.php";
+require __DIR__ . "/common/auth.php";
+require_admin();
 
 $room_no = (int)($_POST["room_no"] ?? 0);
 $price   = (int)($_POST["price"] ?? -1);

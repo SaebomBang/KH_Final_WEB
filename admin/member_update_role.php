@@ -1,5 +1,7 @@
 <?php
 require __DIR__ . "/common/dbconn.php";
+require __DIR__ . "/common/auth.php";
+require_admin();
 
 $no = (int)($_POST["no"] ?? 0);
 $role = trim($_POST["role"] ?? "");

@@ -1,20 +1,33 @@
-<!doctype html>
-<head>
-  <meta charset="utf-8">
-  <title>Admin Login</title>
-</head>
-<body>
-  <h2>관리자 로그인</h2>
-  <form method="post" action="login_ok.php">
-    <div>
-      <label>ID</label>
-      <input type="text" name="id" required>
+<?php
+require __DIR__ . "/common/dbconn.php";
+require __DIR__ . "/common/auth.php";
+
+redirect_if_logged_in();
+
+$pageTitle = "관리자 로그인";
+include __DIR__ . "/common/header.php";
+?>
+
+<h2><?= h($pageTitle) ?></h2>
+
+<?php if (!empty($_GET["err"])): ?>
+    <p class="muted" style="color:#dc3545; font-weight:700;">로그인 실패: 아이디/비밀번호 또는 권한을 확인해줘.</p>
+<?php endif; ?>
+
+<form method="post" action="/admin/login_ok.php">
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <div>
+            <label>ID</label><br>
+            <input type="text" name="id" required>
+        </div>
+        <div>
+            <label>Password</label><br>
+            <input type="password" name="pass" required>
+        </div>
+        <div style="display:flex; align-items:flex-end;">
+            <button type="submit">로그인</button>
+        </div>
     </div>
-    <div>
-      <label>PW</label>
-      <input type="password" name="pass" required>
-    </div>
-    <button type="submit">Login</button>
-  </form>
-</body>
-</html>
+</form>
+
+<?php include __DIR__ . "/common/footer.php"; ?>

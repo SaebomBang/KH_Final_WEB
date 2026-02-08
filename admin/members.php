@@ -1,5 +1,7 @@
 <?php
 require __DIR__ . "/common/dbconn.php";
+require __DIR__ . "/common/auth.php";
+require_admin();
 
 $q = trim($_GET["q"] ?? "");      // id / m_name 검색
 $role = trim($_GET["role"] ?? ""); // role 필터(선택)

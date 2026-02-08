@@ -1,18 +1,15 @@
 <?php
-session_start();
-if (!$_SESSION["user_id"]) {
-    echo "<script>
-        alert('잘못된 요청입니다.');
-        history.back();
-        </script>";
-} else {
-    session_destroy();
-    session_regenerate_id();
+require __DIR__ . "/common/auth.php";
 
-    echo "<script>
-        alert('로그아웃 되었습니다.');
-        location.replace('../index.php');
-
-    </script>";
+// 세션 초기화
+$_SESSION = [];
+if (ini_get("session.use_cookies")) {
+  $params = session_get_cookie_params();
+  setcookie(session_name(), "", time() - 42000,
+    $params["path"], $params["domain"], $params["secure"], $params["httponly"]
+  );
 }
-?>
+session_destroy();
+
+header("Location: /admin/login.php");
+exit;

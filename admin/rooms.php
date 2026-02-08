@@ -1,5 +1,7 @@
 <?php
 require __DIR__ . "/common/dbconn.php";
+require __DIR__ . "/common/auth.php";
+require_admin();
 
 $room_no = trim($_GET["room_no"] ?? ""); // 방번호 검색(선택)
 $r_type  = trim($_GET["r_type"] ?? "");  // 타입 검색(선택)

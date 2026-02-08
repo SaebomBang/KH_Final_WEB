@@ -1,5 +1,7 @@
 <?php
 require __DIR__ . "/common/dbconn.php";
+require __DIR__ . "/common/auth.php";
+require_admin();
 
 $no = (int)($_GET["no"] ?? 0);
 if ($no <= 0) die("잘못된 접근");
