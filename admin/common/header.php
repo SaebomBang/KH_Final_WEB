@@ -11,7 +11,6 @@ if (!isset($pageTitle))
 
     <!-- Bootstrap (local) -->
     <link rel="stylesheet" href="/admin/assets/bootstrap/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="/admin/assets/admin.css">
 </head>
 
@@ -24,9 +23,9 @@ if (!isset($pageTitle))
             </button>
             <div class="collapse navbar-collapse" id="navAdmin">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/admin/reservations.php">예약</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/admin/members.php">회원</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/admin/rooms.php">객실</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/reservations.php">예약관리</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/members.php">회원관리</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/rooms.php">객실관리</a></li>
                 </ul>
                 <!-- 로그인 붙이면 여기 로그아웃 버튼 추가하면 됨 -->
             </div>
