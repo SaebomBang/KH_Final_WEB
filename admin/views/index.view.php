@@ -5,12 +5,6 @@ include "common/header.php";
   <h2><?=h($pageTitle)?></h2>
   <p class="muted">기능 구현 단계(세션/보안 미적용). 오늘: <?=h($today)?></p>
 
-  <nav>
-    <a href="/admin/reservations.php">예약 관리</a>
-    <a href="/admin/members.php">회원 관리</a>
-    <a href="/admin/rooms.php">객실 관리</a>
-  </nav>
-
   <hr class="hr">
 
   <div class="grid">
