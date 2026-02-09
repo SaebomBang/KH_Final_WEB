@@ -8,7 +8,14 @@ include __DIR__ . "/../common/header.php";
     <label>검색(아이디/이름)</label>
     <input type="text" name="q" value="<?=h($q)?>">
     <label>상태</label>
-    <input type="text" name="status" value="<?=h($status)?>" placeholder="예약완료 / 예약취소 등">
+    <select name="status">
+        <option value="">전체</option>
+        <option value="예약완료">예약완료</option>
+        <option value="예약취소">예약취소</option>
+        <option value="체크인">체크인</option>
+        <option value="체크아웃">체크아웃</option>
+
+    </select>
     <button type="submit">검색</button>
     <a href="/admin/reservations.php">초기화</a>
   </form>
