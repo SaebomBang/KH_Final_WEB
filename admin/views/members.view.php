@@ -41,7 +41,7 @@ include __DIR__ . "/../common/header.php";
                 <td><?= h($row["res_count"] ?? 0) ?></td>
                 <td><?= h($row["reg_date"] ?? "") ?></td>
                 <td><?= h($row["role"] ?? "") ?></td>
-                <td><a href="/admin/member_view.php?no=<?= h($row["no"]) ?>">보기</a></td>
+                <td><a href="/admin/member_view.php?no=<?= h($row["no"]) ?>">수정</a></td>
             </tr>
         <?php endwhile; ?>
     <?php endif; ?>
