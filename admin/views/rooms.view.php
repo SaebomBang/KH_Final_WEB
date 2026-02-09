@@ -9,8 +9,13 @@ include __DIR__ . "/../common/header.php";
     <input type="text" name="room_no" value="<?= h($room_no) ?>" placeholder="예: 101">
     <label>타입</label>
 
-
-    <input type="text" name="r_type" value="<?= h($r_type) ?>" placeholder="예: Deluxe">
+    <select name="r_type">
+        <option value="싱글">싱글</option>
+        <option value="더블">더블</option>
+        <option value="디럭스">디럭스</option>
+        <option value="패밀리">패밀리</option>
+        <option value="스위트">스위트</option>
+    </select>
     <button type="submit">검색</button>
     <a href="/admin/rooms.php">초기화</a>
 </form>

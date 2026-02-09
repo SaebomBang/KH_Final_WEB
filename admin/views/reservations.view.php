@@ -14,7 +14,6 @@ include __DIR__ . "/../common/header.php";
         <option value="예약취소">예약취소</option>
         <option value="체크인">체크인</option>
         <option value="체크아웃">체크아웃</option>
-
     </select>
     <button type="submit">검색</button>
     <a href="/admin/reservations.php">초기화</a>
