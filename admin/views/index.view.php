@@ -30,17 +30,17 @@ include "common/header.php";
     <?php if ($recent): ?>
       <?php while($row = mysqli_fetch_assoc($recent)): ?>
         <tr>
+          <td><?=h($row["res_no"])?></td>
           <td><?=h($row["r_no"])?></td>
-          <td><?=h($row["room_no"])?></td>
-          <td><?=h($row["r_type"] ?? "")?></td>
-          <td><?=h($row["m_id"])?></td>
+          <td><?=h($row["r_name"] ?? "")?></td>
+          <td><?=h($row["id"])?></td>
           <td><?=h($row["m_name"])?></td>
           <td><?=h($row["check_in"])?></td>
           <td><?=h($row["check_out"])?></td>
           <td><?=h($row["total_price"])?></td>
           <td><?=h($row["status"] ?? "")?></td>
           <td><?=h($row["created_at"] ?? "")?></td>
-          <td><a href="/admin/reservation_view.php?r_no=<?=h($row["r_no"])?>">보기</a></td>
+          <td><a href="/admin/reservation_view.php?res_no=<?=h($row["res_no"])?>">보기</a></td>
         </tr>
       <?php endwhile; ?>
     <?php endif; ?>
