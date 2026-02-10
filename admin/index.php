@@ -27,9 +27,9 @@ $cntTodayIn = one($conn, "SELECT COUNT(*) AS c FROM reservation WHERE check_in='
 $cntTodayOut = one($conn, "SELECT COUNT(*) AS c FROM reservation WHERE check_out='{$today}'");
 
 $recent = mysqli_query($conn, "
-  SELECT r.r_no, r.room_no, rm.r_type, r.m_id, r.m_name, r.check_in, r.check_out, r.total_price, r.status, r.created_at
+  SELECT r.res_no, r.r_no, rm.r_name, r.id, r.m_name, r.check_in, r.check_out, r.total_price, r.status, r.created_at
   FROM reservation r
-  LEFT JOIN room rm ON r.room_no = rm.room_no
+  LEFT JOIN room rm ON r.r_no = rm.r_no
   ORDER BY r.r_no DESC
   LIMIT 5
 ");

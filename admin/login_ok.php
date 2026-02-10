@@ -3,25 +3,34 @@ require __DIR__ . "/common/dbconn.php";
 require __DIR__ . "/common/auth.php";
 
 $id = trim($_POST["id"] ?? "");
-$pw = trim($_POST["pass"] ?? "");
+$pw_input = trim($_POST["pass"] ?? "");
 
-if ($id === "" || $pw === "") {
+if ($id === "" || $pw_input === "") {
   header("Location: /admin/login.php?err=1");
   exit;
 }
 
-// member에서 id로 조회
-$stmt = mysqli_prepare($conn, "SELECT no, id, pass, role, m_name FROM member WHERE id = ? LIMIT 1");
+$sql = "SELECT no, id, pw, role, name
+        FROM member
+        WHERE id = ?
+        LIMIT 1";
+
+$stmt = mysqli_prepare($conn, $sql);
+if (!$stmt) {
+  die("prepare fail: " . mysqli_error($conn));
+}
+
 mysqli_stmt_bind_param($stmt, "s", $id);
-mysqli_stmt_execute($stmt);
+
+if (!mysqli_stmt_execute($stmt)) {
+  die("execute fail: " . mysqli_stmt_error($stmt));
+}
+
 $res = mysqli_stmt_get_result($stmt);
-$user = mysqli_fetch_assoc($res);
+$user = $res ? mysqli_fetch_assoc($res) : null;
 
 $ok = false;
-
-// 현재 DB pass가 평문일 가능성이 높으니 일단 평문 비교
-// (나중에 보안 단계에서 password_hash/password_verify로 교체 가능)
-if ($user && ($user["pass"] === $pw) && (($user["role"] ?? "") === "admin")) {
+if ($user && (($user["pw"] ?? "") === $pw_input) && (($user["role"] ?? "") === "admin")) {
   $ok = true;
 }
 
@@ -30,12 +39,10 @@ if (!$ok) {
   exit;
 }
 
-// 세션 저장
 $_SESSION["admin_no"] = (int)$user["no"];
 $_SESSION["admin_id"] = $user["id"];
 $_SESSION["admin_name"] = $user["m_name"] ?? "";
 $_SESSION["admin_role"] = $user["role"] ?? "";
 
-// 로그인 성공 → index로
 header("Location: /admin/index.php");
 exit;

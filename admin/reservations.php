@@ -7,10 +7,10 @@ $q = trim($_GET["q"] ?? "");             // m_id / m_name 검색
 $status = trim($_GET["status"] ?? "");   // status 필터
 
 $sql = "
-SELECT r.r_no, r.room_no, rm.r_type, r.m_id, r.m_name,
+SELECT r.res_no, r.r_no, rm.r_name, r.id, r.m_name,
        r.check_in, r.check_out, r.total_price, r.status, r.created_at
 FROM reservation r
-LEFT JOIN room rm ON r.room_no = rm.room_no
+LEFT JOIN room rm ON r.r_no = rm.r_no
 WHERE 1=1
 ";
 
@@ -24,8 +24,9 @@ if ($status !== "") {
   $sql .= " AND r.status = '{$st_esc}' ";
 }
 
-$sql .= " ORDER BY r.r_no DESC";
+$sql .= " ORDER BY r.res_no DESC";
 
+// echo $sql;
 $reservations = mysqli_query($conn, $sql);
 
 $pageTitle = "예약 관리";

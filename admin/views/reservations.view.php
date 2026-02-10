@@ -31,16 +31,16 @@ include __DIR__ . "/../common/header.php";
       <?php while($row = mysqli_fetch_assoc($reservations)): ?>
         <tr>
           <td><?=h($row["r_no"])?></td>
-          <td><?=h($row["room_no"])?></td>
-          <td><?=h($row["r_type"] ?? "")?></td>
-          <td><?=h($row["m_id"])?></td>
+          <td><?=h($row["r_no"])?></td>
+          <td><?=h($row["r_name"] ?? "")?></td>
+          <td><?=h($row["id"])?></td>
           <td><?=h($row["m_name"])?></td>
           <td><?=h($row["check_in"])?></td>
           <td><?=h($row["check_out"])?></td>
           <td><?=h(number_format($row["total_price"])."원")?></td>
           <td><?=h($row["status"] ?? "")?></td>
           <td><?=h($row["created_at"] ?? "")?></td>
-          <td><a href="/admin/reservation_view.php?r_no=<?=h($row["r_no"])?>">보기</a></td>
+          <td><a href="/admin/reservation_view.php?res_no=<?=h($row["res_no"])?>">보기</a></td>
         </tr>
       <?php endwhile; ?>
     <?php endif; ?>

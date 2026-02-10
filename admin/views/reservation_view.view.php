@@ -6,13 +6,13 @@ include "common/header.php";
 
   <table>
     <tr><th>예약번호</th><td><?=h($row["r_no"])?></td></tr>
-    <tr><th>방번호</th><td><?=h($row["room_no"])?></td></tr>
-    <tr><th>객실타입</th><td><?=h($row["r_type"] ?? "")?></td></tr>
+    <tr><th>방번호</th><td><?=h($row["r_no"])?></td></tr>
+    <tr><th>객실타입</th><td><?=h($row["r_name"] ?? "")?></td></tr>
     <tr><th>층</th><td><?=h($row["floor"] ?? "")?></td></tr>
     <tr><th>최대인원</th><td><?=h($row["max_people"] ?? "")?></td></tr>
-    <tr><th>1박 가격</th><td><?=h($row["price"] ?? "")?></td></tr>
+    <tr><th>1박 가격</th><td><?=h($row["r_price"] ?? "")?></td></tr>
 
-    <tr><th>회원ID</th><td><?=h($row["m_id"])?></td></tr>
+    <tr><th>회원ID</th><td><?=h($row["id"])?></td></tr>
     <tr><th>이름</th><td><?=h($row["m_name"])?></td></tr>
     <tr><th>체크인</th><td><?=h($row["check_in"])?></td></tr>
     <tr><th>체크아웃</th><td><?=h($row["check_out"])?></td></tr>
@@ -25,7 +25,7 @@ include "common/header.php";
 
   <h3 style="margin-top:18px;">예약 상태 변경</h3>
   <form method="post" action="/admin/reservation_update.php">
-    <input type="hidden" name="r_no" value="<?=h($row["r_no"])?>">
+    <input type="hidden" name="res_no" value="<?=h($row["res_no"])?>">
     <select name="status">
       <?php foreach($status_options as $opt): ?>
         <option value="<?=h($opt)?>" <?=($opt === ($row["status"] ?? "")) ? "selected" : ""?>>

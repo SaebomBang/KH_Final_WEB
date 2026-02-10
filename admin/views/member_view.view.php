@@ -13,15 +13,15 @@ include __DIR__ . "/../common/header.php";
         </tr>
         <tr>
             <th>ID</th>
-            <td><input type="text" name="id" value="<?= h($member["id"]) ?>"></input></td>
+            <td><?= h($member["id"]) ?></input></td>
         </tr>
         <tr>
             <th>이름</th>
-            <td><input type="text" name="m_name" value="<?= h($member["m_name"]) ?>"></input></td>
+            <td><input type="text" name="m_name" value="<?= h($member["name"]) ?>"></input></td>
         </tr>
         <tr>
             <th>비밀번호</th>
-            <td><input type="text" name="pass" value="<?= h($member["pass"]) ?>"></input></td>
+            <td><input type="text" name="pass" value="<?= h($member["pw"]) ?>"></input></td>
         </tr>
         <tr>
             <th>나이</th>

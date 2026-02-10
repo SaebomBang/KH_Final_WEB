@@ -6,11 +6,11 @@ require_admin();
 $q = trim($_GET["q"] ?? "");      // id / m_name 검색
 $role = trim($_GET["role"] ?? ""); // role 필터(선택)
 
-$sql = "SELECT no, m_name, id, email, phone, res_count, reg_date, role FROM member WHERE 1=1";
+$sql = "SELECT no, name, id, email, phone, res_count, reg_date, role FROM member WHERE 1=1";
 
 if ($q !== "") {
     $q_esc = mysqli_real_escape_string($conn, $q);
-    $sql .= " AND (id LIKE '%{$q_esc}%' OR m_name LIKE '%{$q_esc}%') ";
+    $sql .= " AND (id LIKE '%{$q_esc}%' OR name LIKE '%{$q_esc}%') ";
 }
 
 if ($role !== "") {

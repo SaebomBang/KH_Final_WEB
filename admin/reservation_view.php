@@ -3,19 +3,21 @@ require __DIR__ . "/common/dbconn.php";
 require __DIR__ . "/common/auth.php";
 require_admin();
 
-$r_no = (int) ($_GET["r_no"] ?? 0);
-if ($r_no <= 0)
+$res_no = (int) ($_GET["res_no"] ?? 0);
+if ($res_no <= 0)
     die("잘못된 접근");
 
 
 $sql = "
 SELECT r.*,
-       rm.r_type, rm.floor, rm.max_people, rm.price
+       rm.r_name, rm.floor, rm.max_people, rm.r_price
 FROM reservation r
-LEFT JOIN room rm ON r.room_no = rm.room_no
-WHERE r.r_no = {$r_no}
+LEFT JOIN room rm ON r.r_no = rm.r_no
+WHERE r.res_no = {$res_no}
 LIMIT 1
 ";
+
+
 $res = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($res);
 if (!$row)

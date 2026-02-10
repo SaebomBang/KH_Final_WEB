@@ -35,7 +35,7 @@ include __DIR__ . "/../common/header.php";
             <tr>
                 <td><?= h($row["no"]) ?></td>
                 <td><?= h($row["id"]) ?></td>
-                <td><?= h($row["m_name"]) ?></td>
+                <td><?= h($row["name"]) ?></td>
                 <td><?= h($row["email"]) ?></td>
                 <td><?= h($row["phone"]) ?></td>
                 <td><?= h($row["res_count"] ?? 0) ?></td>
