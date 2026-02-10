@@ -6,7 +6,7 @@ include __DIR__ . "/../common/header.php";
 
 <form method="get" action="/admin/rooms.php">
     <label>방번호</label>
-    <input type="text" name="room_no" value="<?= h($room_no) ?>" placeholder="예: 101">
+    <input type="text" name="r_no" value="<?= h($r_no) ?>" placeholder="예: 101">
     <label>타입</label>
 
     <select name="r_type">
@@ -34,13 +34,13 @@ include __DIR__ . "/../common/header.php";
     <?php if ($rooms): ?>
         <?php while ($row = mysqli_fetch_assoc($rooms)): ?>
             <form method="post" action="/admin/room_update.php" style="margin:0;">
-                <input type="hidden" name="room_no" value="<?= h($row["room_no"]) ?>">
+                <input type="hidden" name="r_no" value="<?= h($row["r_no"]) ?>">
 
                 <tr>
-                    <td><?= h($row["room_no"]) ?></td>
+                    <td><?= h($row["r_no"]) ?></td>
                     <td>
-                        <select name="r_type">
-                            <option value="<?= h($row["r_type"]) ?>"><?= h($row["r_type"]) ?></option>
+                        <select name="r_name">
+                            <option value="<?= h($row["r_name"]) ?>"><?= h($row["r_name"]) ?></option>
                             <option value="싱글">싱글</option>
                             <option value="더블">더블</option>
                             <option value="디럭스">디럭스</option>
@@ -55,7 +55,7 @@ include __DIR__ . "/../common/header.php";
                         <input type="number" name="max_people" value="<?= h($row["max_people"]) ?>" min="0" max="5" step="1">
                     </td>
                     <td>
-                        <input type="number" name="price" value="<?= h($row["price"]) ?>" min="0" step="1000">
+                        <input type="number" name="r_price" value="<?= h($row["r_price"]) ?>" min="0" step="1000">
                     </td>
                     <td>
                         <button type="submit">변경</button>
