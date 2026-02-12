@@ -14,7 +14,7 @@ include __DIR__ . "/../common/header.php";
         <option value="admin" <?= ($role === "admin" ? "selected" : "") ?>>admin</option>
     </select>
     <button type="submit">검색</button>
-    <a class="btn" href="/admin/reservations.php">초기화</a>
+    <a class="btn" href="/admin/members.php">초기화</a>
 </form>
 
 <table>
