@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("192.168.50.111", "root", "1111", "hotel");
+$conn = mysqli_connect("localhost", "root", "P@ssw0rd", "hotel");
 
 if (!$conn) {
     die("DB 연결 실패: " . mysqli_connect_error());
