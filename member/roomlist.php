@@ -23,7 +23,7 @@ if (isset($_GET["keyword"]) && trim($_GET["keyword"]) !== "") {
         default:
             $whereClause = "1";
     }
-}
+}  
 
 // 2. 최종 쿼리 실행
 $strSQL = "SELECT * FROM room WHERE $whereClause ORDER BY r_no ASC";
