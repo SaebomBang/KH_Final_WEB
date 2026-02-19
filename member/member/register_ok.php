@@ -11,7 +11,7 @@ require "common/dbconn.php";
     $age=$_POST["age"];
     $email=$_POST["email"];
     $phone=$_POST["phone"];
-
+    $age=$_POST["age"];
 
     if(!$age) $age=0;
 
@@ -44,7 +44,7 @@ require "common/dbconn.php";
         </script>";
         exit();
     }
-    if($pw1 == "" || strlen($pw1) < 6 || strlen($pw1) >20){
+    if($pw1 = "" || strlen($pw1) < 6 || strlen($pw1) >20){
         echo "<script>
         alert('비밀번호를 다시 입력');
         history.back();
@@ -59,12 +59,8 @@ require "common/dbconn.php";
         exit();
     }
 
-    $strSQL = "select id from member where id = '".$id."';";
+    $strSQL = "select u_id from member where u_id = '".$id."';";
     $rs = mysqli_query($conn,$strSQL);
-        if (!$rs) {
-        // 여기서 에러가 나면 테이블명이나 컬럼명을 DB와 대조해보세요.
-        die("에러 발생: " . mysqli_error($conn));
-    }
     $rs_arr = mysqli_fetch_array($rs);
 
     if($rs_arr){

@@ -17,43 +17,43 @@ include __DIR__ . "/common/head.php";
                 return false;
             }
 
-            // if(document.mform.user_id.value.length < 4 || document.mform.user_id.value.length > 12){
-            //     alert('아이디는 4~12자여야 합니다.');
-            //     mform.user_id.focus();
-            //     return false;
-            // }
+            if(document.mform.user_id.value.length < 4 || document.mform.user_id.value.length > 12){
+                alert('아이디는 4~12자여야 합니다.');
+                mform.user_id.focus();
+                return false;
+            }
 
-            // if(document.mform.name.value == ""){
-            //     alert('이름을 입력하세요.');
-            //     mform.name.focus();
-            //     return false;
-            // }
+            if(document.mform.name.value == ""){
+                alert('이름을 입력하세요.');
+                mform.name.focus();
+                return false;
+            }
 
-            // var en1=/[^(a-zA-Z0-9)]/;
-            // if(en1.test(document.mform.user_id.value)){
-            //     alert('아이디는 영문, 숫자만 가능합니다.');
-            //     user_id.focus();
-            //     return
-            // }
+            var en1=/[^(a-zA-Z0-9)]/;
+            if(en1.test(document.mform.user_id.value)){
+                alert('아이디는 영문, 숫자만 가능합니다.');
+                user_id.focus();
+                return
+            }
 
-            // if(document.mform.user_pw1.value == ""){
-            //     alert('비밀번호를 입력하세요.');
-            //     mform.user_pw1.focus();
-            //     return false;
-            // }
+            if(document.mform.user_pw1.value == ""){
+                alert('비밀번호를 입력하세요.');
+                mform.user_pw1.focus();
+                return false;
+            }
 
-            // if(document.mform.user_pw1.value.length < 6 || document.mform.user_pw1.value.length > 20){
-            //     alert('비밀번호는 6~20자여야 합니다.');
-            //     mform.user_pw1.focus();
-            //     return false;
-            // }
+            if(document.mform.user_pw1.value.length < 6 || document.mform.user_pw1.value.length > 20){
+                alert('비밀번호는 6~20자여야 합니다.');
+                mform.user_pw1.focus();
+                return false;
+            }
 
-            // var en2=/[^(a-zA-Z0-9!@#$%^&*)]/;
-            // if(en2.test(document.mform.user_pw1.value)){
-            //     alert('비밀번호는 영문, 숫자 또는 특수기호만 가능합니다.');
-            //     mform.user_pw1.focus();
-            //     return
-            // }
+            var en2=/[^(a-zA-Z0-9!@#$%^&*)]/;
+            if(en2.test(document.mform.user_pw1.value)){
+                alert('비밀번호는 영문, 숫자 또는 특수기호만 가능합니다.');
+                mform.user_pw1.focus();
+                return
+            }
 
             if(document.mform.user_pw2.value == ""){
                 alert('비밀번호 확인을 입력하세요.');
@@ -77,7 +77,7 @@ include __DIR__ . "/common/head.php";
     <!-- <iframe src="common/head.php" id="bodyFrame" name="body" width="100%" frameborder="0"></iframe> -->
 
     <div id="register_contents" class="contents">
-        <form name="mform" method="post" action="/member/register_ok.php">
+        <form name="mform" method="post" action="member_register_ok.php">
             <table width="550" cellpadding="3" class="grayColor">
                 <tr>
                     <th colspan="2" style="background-color:#323232">

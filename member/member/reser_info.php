@@ -31,16 +31,11 @@ $rs = mysqli_query($conn, $strSQL);
     $total = $rs_arr["total_price"];
     $status = $rs_arr["status"];
     $res_date = $rs_arr["created_at"];
-    $requests = $rs_arr["requests"];
 ?>
 
-                <!-- <tr>
-                    <th></th>
-                    <td></td>
-                </tr> -->
                 <tr>
-                    <th colspan="2" align="center">예약번호<?php echo $res_no; ?></th>
-                    <!-- <td><?php echo $res_no; ?></td> -->
+                    <th>예약번호</th>
+                    <td><?php echo $res_no; ?></td>
                 </tr>
                 <tr>
                     <th>객실</th>
@@ -78,17 +73,8 @@ $rs = mysqli_query($conn, $strSQL);
                     <th>예약일자</th>
                     <td><?php echo $res_date; ?></td>
                 </tr>
-                <tr>
-                    <th>요청사항</th>
-                    <td><?php echo $requests; ?></td>
-                </tr>
-                
 <?php
 }
- if (!$rs) {
-        // 여기서 에러가 나면 테이블명이나 컬럼명을 DB와 대조해보세요.
-        die("에러 발생: " . mysqli_error($conn));
-    }
  if (mysqli_num_rows($rs) == 0) {
         echo "<tr><td colspan='2' align='center' style='padding:50px;'>예약 내역이 없습니다.</td></tr>";
     }

@@ -16,10 +16,9 @@ $rs = mysqli_query($conn, $strSQL);
 $rs_arr = mysqli_fetch_array($rs);
 
 // 2. DB 컬럼명에 맞춰서 짝 맞추기 (u_id -> id, u_pass -> pw)
-// if($rs_arr) {
 if($rs_arr && ($rs_arr["id"] == $id) && ($rs_arr["pw"] == $pw)){
     $_SESSION["user_id"] = $rs_arr["id"];     
-    $_SESSION["user_name"] = $rs_arr["name"]; 
+    $_SESSION["user_name"] = $rs_arr["name"]; // 이름도 저장해두면 좋겠죠?
     $_SESSION["log_ip"] = $_SERVER["REMOTE_ADDR"];
 
     echo "<script>

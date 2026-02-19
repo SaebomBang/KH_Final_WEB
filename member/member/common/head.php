@@ -28,9 +28,7 @@ if (!isset($pageTitle))
                         <li class="nav-item"><a class="nav-link" href="/member/info.php">회원정보</a></li>    
                         <li class="nav-item"><a class="nav-link" href="/member/reservation.php">예약</a></li>    
                         <li class="nav-item"><a class="nav-link" href="/member/reser_info.php">예약 확인</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/member/logout.php">로그아웃</a></li> 
-                        <li class="nav-item"><a class="nav-link" href="/member/board.php">문의게시판</a></li> 
-                        <?php endif; ?> 
+                        <li class="nav-item"><a class="nav-link" href="/member/logout.php">로그아웃</a></li> <?php endif; ?> 
                 </ul>
             </div>
         </div>

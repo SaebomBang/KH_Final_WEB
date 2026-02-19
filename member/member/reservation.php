@@ -71,12 +71,8 @@ while($row = mysqli_fetch_array($roomRS)) {
                 </tr>
                 <tr>
                     <th>총 금액</th>
-                    <td><input type="textarea" name="total" readonly> 원</td>
+                    <td><input type="text" name="total" readonly> 원</td>
                 </tr>
-                <tr>
-    <th>요청사항</th>
-    <td><input type="text" name="requests" size="100" ></td>
-</tr>
             </table>
             
             <p><input type="button" value="예약" onclick="ck()"></p>
