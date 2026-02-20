@@ -4,7 +4,7 @@ require __DIR__ . "/common/dbconn.php";
 require __DIR__ . "/common/auth.php";
 require_admin();
 $today = date("Y-m-d");
-
+          
 function one($conn, $sql)
 {
     $res = mysqli_query($conn, $sql);
