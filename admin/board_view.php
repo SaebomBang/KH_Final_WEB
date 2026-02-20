@@ -9,7 +9,7 @@ $rs = mysqli_query($conn, "SELECT * FROM board WHERE strNumber = $num");
 $data = mysqli_fetch_array($rs);
 
 $pageTitle = "글보기";
-include __DIR__ . "/common/head.php";
+include __DIR__ . "/common/header.php";
 ?>
 <main class="container py-4">
     <table class="table table-bordered">

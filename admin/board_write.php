@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "글쓰기";
-include __DIR__ . "/common/head.php";
+include __DIR__ . "/common/header.php";
 ?>
 <main class="container py-4">
     <div class="row justify-content-center">

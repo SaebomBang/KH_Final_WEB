@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . "/common/dbconn.php"; // 경로에 맞춰 수정하세요
+require __DIR__ . "/common/dbconn.php";
 $pageTitle = "문의게시판";
-include __DIR__ . "/common/head.php"; // 헤더 포함
+include __DIR__ . "/common/header.php";
 
 // 검색 조건 처리
 $keyword = $_GET["keyword"] ?? '';
