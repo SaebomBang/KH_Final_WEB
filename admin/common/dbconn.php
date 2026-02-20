@@ -13,6 +13,7 @@ mysqli_set_charset($conn, "utf8");
  * @return string prevent XSS attack 
  */
 function h($s) {
-  return htmlspecialchars((string)$s, ENT_QUOTES, "UTF-8");
+return $s;  
+//return htmlspecialchars((string)$s, ENT_QUOTES, "UTF-8");
 }
 ?>
