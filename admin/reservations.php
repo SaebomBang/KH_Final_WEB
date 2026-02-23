@@ -16,7 +16,7 @@ WHERE 1=1
 
 if ($q !== "") {
   $q_esc = mysqli_real_escape_string($conn, $q);
-  $sql .= " AND (r.m_id LIKE '%{$q_esc}%' OR r.m_name LIKE '%{$q_esc}%') ";
+  $sql .= " AND (r.id LIKE '%{$q_esc}%' OR r.m_name LIKE '%{$q_esc}%') ";
 }
 
 if ($status !== "") {

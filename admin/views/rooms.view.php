@@ -6,7 +6,7 @@ include __DIR__ . "/../common/header.php";
 
 <form method="get" action="/admin/rooms.php">
     <label>방번호</label>
-    <input type="text" name="r_no" value="<?= h($r_no) ?>" placeholder="예: 101">
+    <input type="text" name="r_no" placeholder="예: 101">
     <label>타입</label>
 
     <select name="r_type">
