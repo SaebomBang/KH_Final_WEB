@@ -41,7 +41,7 @@ if (!$ok) {
 
 $_SESSION["admin_no"] = (int)$user["no"];
 $_SESSION["admin_id"] = $user["id"];
-$_SESSION["admin_name"] = $user["m_name"] ?? "";
+$_SESSION["admin_name"] = $user["name"] ?? "";
 $_SESSION["admin_role"] = $user["role"] ?? "";
 
 header("Location: /admin/index.php");
