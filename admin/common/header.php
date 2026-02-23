@@ -26,7 +26,6 @@ if (!isset($pageTitle))
                     <li class="nav-item"><a class="nav-link" href="/admin/reservations.php">예약관리</a></li>
                     <li class="nav-item"><a class="nav-link" href="/admin/members.php">회원관리</a></li>
                     <li class="nav-item"><a class="nav-link" href="/admin/rooms.php">객실관리</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/admin/board.php">문의게시판</a></li>
                 </ul>
                 <?php if (isset($_SESSION["admin_id"])): ?>
                     <a class="btn" href="/admin/logout.php">로그아웃</a>
