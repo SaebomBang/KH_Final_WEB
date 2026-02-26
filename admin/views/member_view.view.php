@@ -21,7 +21,7 @@ include __DIR__ . "/../common/header.php";
         </tr>
         <tr>
             <th>비밀번호</th>
-            <td><input type="text" name="pass" value="<?= h($member["pw"]) ?>"></input></td>
+            <td><input type="password" name="pass" value=""></input></td>
         </tr>
         <tr>
             <th>나이</th>

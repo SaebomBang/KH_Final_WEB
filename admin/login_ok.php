@@ -10,9 +10,11 @@ if ($id === "" || $pw_input === "") {
   exit;
 }
 
-$sql = "SELECT no, id, pw, role, name
+$sql = "SELECT no, id, name, role
         FROM member
         WHERE id = ?
+          AND pw = PASSWORD(?)
+          AND role = 'admin'
         LIMIT 1";
 
 $stmt = mysqli_prepare($conn, $sql);
@@ -20,7 +22,7 @@ if (!$stmt) {
   die("prepare fail: " . mysqli_error($conn));
 }
 
-mysqli_stmt_bind_param($stmt, "s", $id);
+mysqli_stmt_bind_param($stmt, "ss", $id, $pw_input);
 
 if (!mysqli_stmt_execute($stmt)) {
   die("execute fail: " . mysqli_stmt_error($stmt));
@@ -29,12 +31,7 @@ if (!mysqli_stmt_execute($stmt)) {
 $res = mysqli_stmt_get_result($stmt);
 $user = $res ? mysqli_fetch_assoc($res) : null;
 
-$ok = false;
-if ($user && (($user["pw"] ?? "") === $pw_input) && (($user["role"] ?? "") === "admin")) {
-  $ok = true;
-}
-
-if (!$ok) {
+if (!$user) {
   header("Location: /admin/login.php?err=1");
   exit;
 }
