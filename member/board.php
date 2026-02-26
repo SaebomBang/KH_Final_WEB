@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . "/common/dbconn.php"; // 경로에 맞춰 수정하세요
 $pageTitle = "문의게시판";
 include __DIR__ . "/common/head.php"; // 헤더 포함
@@ -59,7 +58,7 @@ $rs = mysqli_query($conn, $strSQL);
         </table>
 
         <div class="d-flex justify-content-between mt-3">
-            <form method="get" action="board_list.php" class="d-flex gap-2">
+            <form method="get" action="board.php" class="d-flex gap-2">
                 <select name="k_s" class="form-select form-select-sm" style="width:100px;">
                     <option value="1" <?=$k_s=='1'?'selected':''?>>글제목</option>
                     <option value="2" <?=$k_s=='2'?'selected':''?>>글내용</option>

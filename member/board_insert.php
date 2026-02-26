@@ -11,7 +11,7 @@ $sql = "INSERT INTO board (strName, strSubject, strContent, writeDate)
         VALUES ('$name', '$subject', '$content', NOW())";
 
 if(mysqli_query($conn, $sql)) {
-    echo "<script>alert('등록되었습니다.'); location.href='board_list.php';</script>";
+    echo "<script>alert('등록되었습니다.'); location.href='board.php';</script>";
 } else {
     echo "에러: " . mysqli_error($conn);
 }

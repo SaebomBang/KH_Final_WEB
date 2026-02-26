@@ -73,7 +73,7 @@ require "common/dbconn.php";
         history.back();
         </script>";
     } else {
-        $strSQL = "insert into member values (0,'$name','$id','$pw1',$age,'$email',$phone,0,now(),'user')";
+        $strSQL = "insert into member values (0,'$name','$id',PASSWORD('$pw1'),$age,'$email',$phone,0,now(),'user')";
         mysqli_query($conn,$strSQL);
         echo "<script>
         alert('회원가입을 축하합니다.');

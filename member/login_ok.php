@@ -11,13 +11,13 @@ if ($id === "" || $pw === "") {
 }
 
 
-$strSQL = "SELECT * FROM member WHERE id='" . $id . "' AND pw='" . $pw . "'";
+$strSQL = "SELECT * FROM member WHERE id='" . $id . "' AND pw=PASSWORD('" . $pw . "')";
 $rs = mysqli_query($conn, $strSQL);
 $rs_arr = mysqli_fetch_array($rs);
 
 // 2. DB 컬럼명에 맞춰서 짝 맞추기 (u_id -> id, u_pass -> pw)
 // if($rs_arr) {
-if($rs_arr && ($rs_arr["id"] == $id) && ($rs_arr["pw"] == $pw)){
+if($rs_arr && ($rs_arr["id"] == $id)){
     $_SESSION["user_id"] = $rs_arr["id"];     
     $_SESSION["user_name"] = $rs_arr["name"]; 
     $_SESSION["log_ip"] = $_SERVER["REMOTE_ADDR"];

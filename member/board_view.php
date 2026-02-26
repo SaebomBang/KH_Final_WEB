@@ -28,6 +28,6 @@ include __DIR__ . "/common/head.php";
         </tr>
     </table>
     <div class="text-center">
-        <button class="btn btn-secondary" onclick="location.href='board_list.php';">목록으로</button>
+        <button class="btn btn-secondary" onclick="location.href='board.php';">목록으로</button>
     </div>
 </main>
