@@ -6,10 +6,11 @@ include __DIR__ . "/common/head.php";
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h3 class="mb-4">문의하기</h3>
-            <form action="board_insert.php" method="post">
+            <form action="board_insert.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label">작성자</label>
-                    <input type="text" name="name" class="form-control" value="<?=$_SESSION['user_name'] ?? ''?>" required>
+                    <input type="text" name="name" class="form-control" value="<?= $_SESSION['user_name'] ?? '' ?>"
+                        required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">제목</label>
@@ -18,6 +19,10 @@ include __DIR__ . "/common/head.php";
                 <div class="mb-3">
                     <label class="form-label">내용</label>
                     <textarea name="content" class="form-control" rows="10" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">첨부 파일</label>
+                    <input type="file" name="att_file" class="form-control">
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">등록하기</button>

@@ -15,15 +15,31 @@ include __DIR__ . "/common/head.php";
     <table class="table table-bordered">
         <tr>
             <th class="table-light" width="20%">제목</th>
-            <td><?=$data['strSubject']?></td> <!-- XSS 취약 지점 -->
+            <td><?= $data['strSubject'] ?></td> <!-- XSS 취약 지점 -->
         </tr>
         <tr>
             <th class="table-light">작성자</th>
-            <td><?=$data['strName']?></td>
+            <td><?= $data['strName'] ?></td>
+        </tr>
+        <tr>
+            <th class="table-light">첨부파일</th>
+            <td><?php if (!empty($data['saved_filename'])): ?>
+                    <a href="download.php?strNumber=<?= (int) $data['strNumber'] ?>">
+                        <?= $data['orig_filename'] ?? '첨부파일' ?>
+                    </a>
+                    <?php if (!empty($data['file_size'])): ?>
+                        <span class="text-muted">
+                            (<?= number_format((int) $data['file_size']) ?> bytes)
+                        </span>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <span class="text-muted">없음</span>
+                <?php endif; ?>
+            </td>
         </tr>
         <tr>
             <td colspan="2" style="min-height:300px; padding:30px;">
-                <?=$data['strContent']?> <!-- XSS 취약 지점 -->
+                <?= $data['strContent'] ?> <!-- XSS 취약 지점 -->
             </td>
         </tr>
     </table>
