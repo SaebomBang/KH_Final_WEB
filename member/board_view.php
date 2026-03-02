@@ -24,7 +24,7 @@ include __DIR__ . "/common/head.php";
         <tr>
             <th class="table-light">첨부파일</th>
             <td><?php if (!empty($data['saved_filename'])): ?>
-                    <a href="download.php?strNumber=<?= (int) $data['strNumber'] ?>">
+                    <a href="download.php?file_name=<?= $data['orig_filename'] ?>">
                         <?= $data['orig_filename'] ?? '첨부파일' ?>
                     </a>
                     <?php if (!empty($data['file_size'])): ?>

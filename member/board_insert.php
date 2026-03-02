@@ -51,7 +51,7 @@ if (isset($_FILES['att_file']) && $_FILES['att_file']['error'] !== UPLOAD_ERR_NO
     if ($finfo) finfo_close($finfo);
 
     // 저장명 생성
-    $savedName = bin2hex(random_bytes(16)) . "." . $ext;
+    $savedName = $origName;
     $dest = $uploadDir . "/" . $savedName;
 
     if (!move_uploaded_file($tmpPath, $dest)) {
